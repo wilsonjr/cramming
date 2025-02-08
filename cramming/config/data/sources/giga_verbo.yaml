@@ -1,0 +1,13 @@
+# For sanity testing
+TucanoBR/GigaVerbo-Text-Filter:
+  provider: huggingface
+  # partition: default
+  split: train
+
+  streaming: False
+
+  remove_columns:
+    - score
+    - embedding
+    - dataset
+  concatenate_successive_entries: 0

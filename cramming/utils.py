@@ -119,7 +119,14 @@ def system_startup(cfg):
             f"No GPU allocated to this process on {socket.gethostname()} with name {cfg.name}. Running in CPU-mode is likely an error."
         )
 
-    allowed_cpus_available = min(psutil.cpu_count(logical=False), len(psutil.Process().cpu_affinity()))  # covering both affinity and phys.
+    proc = psutil.Process()
+    physical_cpus = psutil.cpu_count(logical=False)
+
+    if hasattr(proc, "cpu_affinity"):
+        allowed_cpus_available = min(physical_cpus, len(proc.cpu_affinity()))
+    else:
+        allowed_cpus_available = physical_cpus
+
     # Distributed launch?
     if "LOCAL_RANK" in os.environ:
         torch.distributed.init_process_group(backend=cfg.impl.dist_backend)
