@@ -1,0 +1,13 @@
+# For sanity testing
+TucanoBR/GigaVerbo:
+  provider: huggingface
+  # partition: default
+  split: train
+
+  streaming: True
+
+  remove_columns:
+    - label
+    - probs
+    - metadata
+  concatenate_successive_entries: 0
