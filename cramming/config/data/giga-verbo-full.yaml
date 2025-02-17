@@ -21,8 +21,8 @@ include_sep_token_in_corpus: True
 use_type_ids: False
 # max_entries_in_raw_dataset: 8e6 # About 40 mio seqs of length 128
 # max_seq_in_tokenized_dataset: 85e6 # Select only this many tokenized sequences.
-max_entries_in_raw_dataset: 300000 # About 40 mio seqs of length 128
-max_seq_in_tokenized_dataset: 800000 # Select only this many tokenized sequences.
+max_entries_in_raw_dataset: 100_000_000 # About 40 mio seqs of length 128
+max_seq_in_tokenized_dataset: 100_000_000_000_000 # Select only this many tokenized sequences.
 # max_seq_in_tokenized_dataset should be just slightly more than budget * 60 * 60 * expected tokens/sec for the single epoch of training
 
 # Data Cleaning:

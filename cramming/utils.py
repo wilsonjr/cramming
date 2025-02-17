@@ -115,7 +115,7 @@ def system_startup(cfg):
         log.info(os.environ)
 
     if not torch.cuda.is_available() and not cfg.dryrun:
-        raise ValueError(
+        log.warning(
             f"No GPU allocated to this process on {socket.gethostname()} with name {cfg.name}. Running in CPU-mode is likely an error."
         )
 
