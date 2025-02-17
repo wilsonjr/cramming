@@ -2,7 +2,7 @@ python pretrain.py\
    name=cramming-bert-pt\
    arch=crammed-bert\
    train=bert-o4\
-   data=giga-verbo\
+   data=giga-verbo-full\
    wandb.enabled=True\
    dryrun=True\
    # budget=5\
