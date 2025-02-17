@@ -2,10 +2,11 @@ python pretrain.py\
    name=cramming-bert-pt\
    arch=crammed-bert\
    train=bert-o4\
-   data=giga-verbo\
+   data=giga-verbo-full\
    wandb.enabled=True\
-   budget=5\
-   impl.microbatch_size=64\
-   train.batch_size=4096\
-   impl.push_to_huggingface_hub=True\
-   impl.hf_directoy_name=crammedBERT-subset-GigaVerbo
+   dryrun=True\
+   # budget=5\
+   # impl.microbatch_size=64\
+   # train.batch_size=4096\
+   # impl.push_to_huggingface_hub=True\
+   # impl.hf_directoy_name=crammedBERT-subset-GigaVerbo
